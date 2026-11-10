@@ -1,0 +1,27 @@
+### Archivo .gitignore
+
+# Python (cache y entornos virtuales)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.ipynb_checkpoints/
+
+# LaTeX (archivos auxiliares y temporales)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.toc
+*.blg
+*.bbl
+*.out
+
+# Datos (archivos pesados o crudos para no saturar Git)
+data/*.xlsx
+data/*.mat
+data/*.dat
+data/*.h5
