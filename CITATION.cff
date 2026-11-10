@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Si haces uso de este software, favor de citarlo de la siguiente manera."
+authors:
+- family-names: "De León Ramírez"
+  given-names: "Edgar Antonio"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "Análisis del Ciclo de Vida y Retención de Usuarios en la Era Digital de Steam"
+version: v1.0.0
+date-released: 2026-11-09
+url: "https://github.com/Edgar-Antonio-De-Leon-Ramirez/PIA-Computo-Cientifico"
