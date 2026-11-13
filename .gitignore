@@ -25,3 +25,7 @@ data/*.xlsx
 data/*.mat
 data/*.dat
 data/*.h5
+
+# JSON
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
