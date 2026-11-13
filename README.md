@@ -47,7 +47,7 @@ Para replicar localmente la pipeline completa de este ecosistema analítico, eje
 # 1. Hacer fork y clonar el repositorio
 git clone https://github.com/TU_USUARIO/PIA-Computo-Cientifico.git
 
-# 2. Acceder al directorio del código fuente
+# 2. Acceder al directorio del repositorio
 cd PIA-Computo-Cientifico
 
 # 3. Instalar las dependencias necesarias
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 # 4. Acceder al directorio del código fuente
 cd src/
 
-# 5. Ejcutar la extracción automática en vivo de la API
+# 5. Ejecutar la extracción automática en vivo de la API
 python descargar_juegos_steam.py
 
 # 6. Validar las medidas matemáticas cruzadas contra el Parquet generado
@@ -82,7 +82,7 @@ Variables principales en `fact_steam_games.parquet`
 | `Anio_Lanzamiento` | Año de lanzamiento del videojuego |
 | `Generacion_Ciclo_Vida` | Lanzamiento reciente o clásico (antiguo) |
 | `Jugadores_Simultaneos_CCU` | Numero de jugadores simultaneos |
-| `Volumen_Historico_Interaccioes` | Volumen de recepción |
+| `Volumen_Historico_Interacciones` | Volumen de recepción |
 | `Indice_Estabilidad_Retencion` | Porcentaje de retención de jugadores |
 | `Desarrollador` | Empresa o estudio detrás del videojuego |
 | `Genero_Principal` | Genero(s) del videojuego |
