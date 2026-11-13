@@ -1,0 +1,59 @@
+table dim_juegos
+	lineageTag: 7dc8f0e7-ff72-4a83-99d6-7d97a7ceed1d
+
+	column AppID
+		dataType: int64
+		formatString: 0
+		lineageTag: 25e8e617-c884-4259-af05-611abef6ceb5
+		summarizeBy: none
+		sourceColumn: AppID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre
+		dataType: string
+		lineageTag: d1110644-1e64-4a6b-9ac8-1c059aa48217
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Modelo_Monetizacion
+		dataType: string
+		lineageTag: dd7616d6-3f90-407f-834f-57845c2f635c
+		summarizeBy: none
+		sourceColumn: Modelo_Monetizacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desarrollador
+		dataType: string
+		lineageTag: 7b5310bc-70fc-4212-8b28-fec15961fb0e
+		summarizeBy: none
+		sourceColumn: Desarrollador
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genero_Principal
+		dataType: string
+		lineageTag: f38657d3-3ab0-4812-ab8d-ac2fbb7bdda0
+		summarizeBy: none
+		sourceColumn: Genero_Principal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_juegos = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(RutaDatos & "\data\processed\fact_steam_games.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"AppID", "Nombre", "Modelo_Monetizacion", "Desarrollador", "Genero_Principal"}),
+				    #"Extracted Values" = Table.TransformColumns(#"Removed Other Columns", {"Genero_Principal", each Text.Combine(List.Transform(_, Text.From), ","), type text}),
+				    #"Removed Duplicates" = Table.Distinct(#"Extracted Values", {"AppID"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

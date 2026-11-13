@@ -1,0 +1,100 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "c945f5e405d177c1a40a",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 8000,
+    "height": 276.48,
+    "width": 1641.6,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "F2P vs Premium: ¿Los videojuegos recientes mantienen mayor concurrencia promedio que los clásicos, o la antigüedad consolidada del modelo Free-to-Play (F2P) supera al efecto novedad de los lanzamientos actuales?",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "El análisis de 8,000 títulos de la API de SteamSpy demuestra que los juegos Free-to-Play clásicos monopolizan la retención histórica por altos costos de cambio, mientras que los lanzamientos Premium superan a los nuevos F2P debido a la saturación del mercado tras 2022",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Esta investigación evalúa el impacto de los modelos de monetización en el ciclo de vida del software mediante el análisis de una muestra de 8,000 registros de la API de SteamSpy, demostrando que aunque el modelo Premium genera picos de tracción iniciales superiores por efecto de novedad, el modelo Free-to-Play es significativamente más eficiente para mitigar la tasa de abandono y retener comunidades de usuarios estables a largo plazo.'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading3'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "21D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

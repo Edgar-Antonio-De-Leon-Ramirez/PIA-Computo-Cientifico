@@ -1,0 +1,82 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "c2827aceb19843ce7959",
+  "position": {
+    "x": 1641.259842519685,
+    "y": 0,
+    "z": 5000,
+    "height": 155.19685039370077,
+    "width": 278.503937007874,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_steam_games"
+                    }
+                  },
+                  "Property": "Generacion_Ciclo_Vida"
+                }
+              },
+              "queryRef": "fact_steam_games.Generacion_Ciclo_Vida",
+              "nativeQueryRef": "Generacion_Ciclo_Vida",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "syncGroup": {
+      "groupName": "Generacion_Ciclo_Vida",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "be4fa9ce3739125010c7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_steam_games"
+              }
+            },
+            "Property": "Generacion_Ciclo_Vida"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

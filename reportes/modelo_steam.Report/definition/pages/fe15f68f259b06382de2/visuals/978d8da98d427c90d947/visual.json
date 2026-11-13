@@ -1,0 +1,242 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "978d8da98d427c90d947",
+  "position": {
+    "x": 1108.08,
+    "y": 282.96,
+    "z": 7000,
+    "height": 797.04,
+    "width": 533.52,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_juegos"
+                    }
+                  },
+                  "Property": "Nombre"
+                }
+              },
+              "queryRef": "dim_juegos.Nombre",
+              "nativeQueryRef": "Nombre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_fechas"
+                    }
+                  },
+                  "Property": "Año"
+                }
+              },
+              "queryRef": "dim_fechas.Año",
+              "nativeQueryRef": "Año"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_juegos"
+                    }
+                  },
+                  "Property": "Modelo_Monetizacion"
+                }
+              },
+              "queryRef": "dim_juegos.Modelo_Monetizacion",
+              "nativeQueryRef": "Modelo_Monetizacion"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_steam_games"
+                    }
+                  },
+                  "Property": "Jugadores_Simultaneos_CCU"
+                }
+              },
+              "queryRef": "Sum(fact_steam_games.Jugadores_Simultaneos_CCU)",
+              "nativeQueryRef": "Jugadores_Simultaneos_CCU"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_steam_games"
+                    }
+                  },
+                  "Property": "Indice_Estabilidad_Retencion"
+                }
+              },
+              "queryRef": "Sum(fact_steam_games.Indice_Estabilidad_Retencion)",
+              "nativeQueryRef": "Indice_Estabilidad_Retencion"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_steam_games"
+                  }
+                },
+                "Property": "Jugadores_Simultaneos_CCU"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 1,000 de aplicaciones líderes del mercado ordenadas por volumen de tráfico concurrente'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Unidades: Valores absolutos y porcentuales unitarios. Fuente: Pipeline de datos relacionales de SteamSpy API. Licencia del dataset: ODC-By'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "234eefe091260b053950",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_juegos"
+              }
+            },
+            "Property": "Nombre"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "62fd34c2410093b329e9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_fechas"
+              }
+            },
+            "Property": "Año"
+          }
+        },
+        "type": "Advanced",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "26af8ba7cd630c181002",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_juegos"
+              }
+            },
+            "Property": "Modelo_Monetizacion"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "42dcb2e967350ea85256",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_steam_games"
+              }
+            },
+            "Property": "Jugadores_Simultaneos_CCU"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bd86e0fca73d03260c1b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_steam_games"
+              }
+            },
+            "Property": "Indice_Estabilidad_Retencion"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

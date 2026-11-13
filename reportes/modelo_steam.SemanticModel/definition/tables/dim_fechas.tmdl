@@ -1,0 +1,55 @@
+table dim_fechas
+	lineageTag: 2d2f2b91-9d4e-4bb2-85c5-4733853cc877
+
+	column Date
+		formatString: General Date
+		lineageTag: 7bb74837-43cf-4c22-810a-3b00edb6a65d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 71718188-20db-48a5-a4c2-edeb43ba1db9
+			defaultHierarchy: LocalDateTable_c06cfad6-7087-4494-a31f-68b8917447b9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		formatString: 0
+		lineageTag: cf210180-59fe-4351-9ff9-2396ed6a805b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Año]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		lineageTag: 58981a91-2bb2-43c1-bc23-0954bb16f608
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Trimestre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		lineageTag: 408f4fd6-52e9-4a5c-a29c-b5f9568b1a50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_fechas = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS (
+				    CALENDAR (DATE(2003, 1, 1), DATE(2027, 12, 31)),
+				    "Año", YEAR([Date]),
+				    "Trimestre", "T" & FORMAT([Date], "Q"),
+				    "Mes", FORMAT([Date], "MMMM")
+				)
+
+	annotation PBI_Id = 1ad2b0c320d94abb8d05054a29a7751e
+

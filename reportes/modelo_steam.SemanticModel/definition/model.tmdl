@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["fact_steam_games","RutaDatos","dim_juegos"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table fact_steam_games
+ref table dim_juegos
+ref table dim_fechas
+ref table DateTableTemplate_eaf878bd-b316-41d4-af42-f716cf9363b7
+ref table LocalDateTable_c06cfad6-7087-4494-a31f-68b8917447b9
+
+ref cultureInfo en-US
+

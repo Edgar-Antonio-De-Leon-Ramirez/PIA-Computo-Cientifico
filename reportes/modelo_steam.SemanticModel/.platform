@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "modelo_steam"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "da497149-ece0-4c46-bbca-6ee56ae27ce1"
+  }
+}

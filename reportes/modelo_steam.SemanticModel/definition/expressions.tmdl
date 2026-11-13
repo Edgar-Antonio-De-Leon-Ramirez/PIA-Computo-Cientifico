@@ -1,0 +1,7 @@
+expression RutaDatos = "C:\Users\Usuario\Desktop\PIA-Computo-Cientifico" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 138d66c7-cbf2-4570-89c8-ed53d815855a
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "f262a684157802948ad2",
+  "position": {
+    "x": 1641.259842519685,
+    "y": 155.19685039370077,
+    "z": 6000,
+    "height": 165.82677165354329,
+    "width": 278.503937007874,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_juegos"
+                    }
+                  },
+                  "Property": "Modelo_Monetizacion"
+                }
+              },
+              "queryRef": "dim_juegos.Modelo_Monetizacion",
+              "nativeQueryRef": "Modelo_Monetizacion",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "syncGroup": {
+      "groupName": "Modelo_Monetizacion",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

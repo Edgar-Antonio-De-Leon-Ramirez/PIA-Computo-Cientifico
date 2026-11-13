@@ -1,0 +1,113 @@
+table fact_steam_games
+	lineageTag: 4a0387dc-cb09-40e5-ab8e-94c6eac83f3d
+
+	measure Total_CCU_Global = SUM(fact_steam_games[Jugadores_Simultaneos_CCU])
+		formatString: 0
+		lineageTag: 7d43dcbf-b3ef-4003-bcec-ac25c8d65dbe
+
+	measure Promedio_Estabilidad = AVERAGE(fact_steam_games[Indice_Estabilidad_Retencion])
+		lineageTag: 3f3ca818-0120-439f-8cdc-02d4c23ea7f0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Promedio_Estabilidad_Recientes = ```
+			
+			CALCULATE(
+			    AVERAGE(fact_steam_games[Indice_Estabilidad_Retencion]), 
+			    fact_steam_games[Generacion_Ciclo_Vida] = "Lanzamiento Reciente"
+			)
+			```
+		lineageTag: 17c54fd8-1aa2-43bd-a4c9-e761999da73d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Filas Hechos' = COUNTROWS('fact_steam_games')
+		formatString: 0
+		lineageTag: 082239e7-0728-416e-a0e4-da1d42c5dee4
+
+	column AppID
+		dataType: int64
+		formatString: 0
+		lineageTag: 01199588-d4c9-4419-95fa-00c63b9582e1
+		summarizeBy: none
+		sourceColumn: AppID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Precio_Lanzamiento
+		dataType: double
+		lineageTag: 8e3d6a9d-c0e3-455e-9960-96a8bf93b0a5
+		summarizeBy: sum
+		sourceColumn: Precio_Lanzamiento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Anio_Lanzamiento
+		dataType: int64
+		formatString: 0
+		lineageTag: 5bc116bf-7eab-4997-89a3-521168c77587
+		summarizeBy: none
+		sourceColumn: Anio_Lanzamiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Generacion_Ciclo_Vida
+		dataType: string
+		lineageTag: de0f7ed2-f03d-4d98-a68d-500240e9244e
+		summarizeBy: none
+		sourceColumn: Generacion_Ciclo_Vida
+
+		annotation SummarizationSetBy = Automatic
+
+	column Jugadores_Simultaneos_CCU
+		dataType: int64
+		formatString: 0
+		lineageTag: e51009f4-0784-4662-a61f-cf79d5f05afa
+		summarizeBy: sum
+		sourceColumn: Jugadores_Simultaneos_CCU
+
+		annotation SummarizationSetBy = Automatic
+
+	column Volumen_Historico_Interacciones
+		dataType: int64
+		formatString: 0
+		lineageTag: f4cf3bc2-ff1d-459f-9eab-df6b62c6f78b
+		summarizeBy: sum
+		sourceColumn: Volumen_Historico_Interacciones
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indice_Estabilidad_Retencion
+		dataType: double
+		lineageTag: c5ea330b-23f7-4a0c-9f86-06ec3ecf8dff
+		summarizeBy: sum
+		sourceColumn: Indice_Estabilidad_Retencion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fecha_Extraccion
+		dataType: string
+		lineageTag: 5ab0dfeb-ae4c-4199-a612-8ce9e702e555
+		summarizeBy: none
+		sourceColumn: Fecha_Extraccion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_steam_games = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(RutaDatos & "\data\processed\fact_steam_games.parquet"), [Compression=null, LegacyColumnNameEncoding=false, MaxDepth=null]),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"AppID", "Precio_Lanzamiento", "Anio_Lanzamiento", "Generacion_Ciclo_Vida", "Jugadores_Simultaneos_CCU", "Volumen_Historico_Interacciones", "Indice_Estabilidad_Retencion", "Fecha_Extraccion"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"AppID"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

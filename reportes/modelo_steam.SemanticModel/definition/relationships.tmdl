@@ -1,0 +1,17 @@
+relationship AutoDetected_ed0cfc7f-aab2-4545-ae3e-68332175e882
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: dim_juegos.AppID
+	toColumn: fact_steam_games.AppID
+
+relationship 71718188-20db-48a5-a4c2-edeb43ba1db9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_fechas.Date
+	toColumn: LocalDateTable_c06cfad6-7087-4494-a31f-68b8917447b9.Date
+
+relationship 19be606f-fb4c-6837-cd65-f41ec2f60a32
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: fact_steam_games.Anio_Lanzamiento
+	toColumn: dim_fechas.Año
+

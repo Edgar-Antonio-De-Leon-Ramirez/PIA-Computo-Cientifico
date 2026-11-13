@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "modelo_steam"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "39de0fca-d72e-4947-87bb-5534d0e8d1f9"
+  }
+}

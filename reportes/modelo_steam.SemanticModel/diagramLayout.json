@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 123
+          },
+          "nodeIndex": "dim_juegos",
+          "nodeLineageTag": "7dc8f0e7-ff72-4a83-99d6-7d97a7ceed1d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 299,
+            "y": 0
+          },
+          "nodeIndex": "fact_steam_games",
+          "nodeLineageTag": "4a0387dc-cb09-40e5-ab8e-94c6eac83f3d",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 621,
+            "y": 120
+          },
+          "nodeIndex": "dim_fechas",
+          "nodeLineageTag": "2d2f2b91-9d4e-4bb2-85c5-4733853cc877",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

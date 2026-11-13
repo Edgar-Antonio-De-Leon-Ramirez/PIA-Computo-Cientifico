@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "4ee367f228c008608742",
+  "position": {
+    "x": 1641.259842519685,
+    "y": 886.53543307086613,
+    "z": 4000,
+    "height": 193.46456692913387,
+    "width": 278.503937007874,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_steam_games"
+                    }
+                  },
+                  "Property": "Promedio_Estabilidad_Recientes"
+                }
+              },
+              "queryRef": "fact_steam_games.Promedio_Estabilidad_Recientes",
+              "nativeQueryRef": "Promedio_Estabilidad_Recientes"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_steam_games"
+                  }
+                },
+                "Property": "Promedio_Estabilidad_Recientes"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
