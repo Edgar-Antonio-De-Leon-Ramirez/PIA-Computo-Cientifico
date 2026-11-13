@@ -48,18 +48,21 @@ Para replicar localmente la pipeline completa de este ecosistema analítico, eje
 git clone https://github.com/TU_USUARIO/PIA-Computo-Cientifico.git
 
 # 2. Acceder al directorio del código fuente
-cd "PIA-Computo-Cientifico/src"
+cd PIA-Computo-Cientifico
 
 # 3. Instalar las dependencias necesarias
-pip install -r requeriments.txt
+pip install -r requirements.txt
 
-# 4. Ejcutar la extracción automática en vivo de la API
+# 4. Acceder al directorio del código fuente
+cd src/
+
+# 5. Ejcutar la extracción automática en vivo de la API
 python descargar_juegos_steam.py
 
-# 5. Validar las medidas matemáticas cruzadas contra el Parquet generado
+# 6. Validar las medidas matemáticas cruzadas contra el Parquet generado
 python validar_medidas.py
 
-# 6. Abrir Power BI Desktop
+# 7. Abrir Power BI Desktop
 Abrir el archivo `modelo_steam.pbip` en Power BI Desktop y hacer clic en **Actualizar** para renderizar la narrativa visual completa.
 ```
 
