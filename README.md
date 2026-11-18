@@ -56,6 +56,7 @@ pip install -r requirements.txt
 # 4. Acceder al directorio del código fuente
 cd src/
 
+# (IMPORTANTE: Si deseas obtener los mismos resultados que en reporte_steam.pdf en docs/ no ejecutes este paso) 
 # 5. Ejecutar la extracción automática en vivo de la API
 python descargar_juegos_steam.py
 
@@ -63,7 +64,7 @@ python descargar_juegos_steam.py
 python validar_medidas.py
 
 # 7. Abrir Power BI Desktop
-Abrir el archivo `modelo_steam.pbip` en Power BI Desktop y hacer clic en **Actualizar** para renderizar la narrativa visual completa.
+Abrir el archivo `modelo_steam.pbip` en Power BI Desktop y hacer clic en **Actualizar** para renderizar la narrativa visual completa. En caso de que marque error, dar clic en Transformar Datos y cambiar ligeramente el parámetro RutaDatos.
 ```
 
 ## 📚 Datos: SteamSpy API
