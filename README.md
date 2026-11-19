@@ -19,7 +19,7 @@ PIA-Computo-Cientifico/
 │
 ├── src/
 │   ├── descargar_juegos_steam.py <-- Script de extracción en lotes desde la API de SteamSpy
-│   └── validar_medidas_dax.py        <-- Pipeline de auditoría y validación cruzada (Pandas vs. DAX)
+│   └── validar_medidas_dax.py    <-- Pipeline de auditoría y validación cruzada (Pandas vs. DAX)
 │
 ├── docs/
 │   ├── presentacion_steam.pdf  <-- Archivo con las diapositivas de la presentación
